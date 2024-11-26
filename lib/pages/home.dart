@@ -174,8 +174,9 @@ class HomePageState extends State<HomePage> {
       Colors.green.shade100,
       Colors.yellow.shade600,
     ];
-
-    return Container(
+    
+    return bands.any((element) => true)
+    ? Container(
         padding: const EdgeInsets.only(top: 10),
         width: double.infinity,
         height: 200,
@@ -194,6 +195,7 @@ class HomePageState extends State<HomePage> {
           ),
           colorList: colorList,
           chartType: ChartType.ring,
-        ));
+        ))
+    : const Text("No Data");
   }
 }
